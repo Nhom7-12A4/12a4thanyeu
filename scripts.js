@@ -28,8 +28,36 @@ progress.addEventListener("input", () => {
     audio.currentTime = progress.value;
 });
 
-function formatTime(time) {
-    const minutes = Math.floor(time / 60);
-    const seconds = Math.floor(time % 60);
-    return minutes + ":" + (seconds < 10 ? "0" + seconds : seconds);
+function show(m) {
+    const data = {
+        A: {
+            name: "Nguyễn Văn A",
+            info: "Leader - Nhiệt tình 💪",
+            img: "img/a.jpg"
+        },
+        B: {
+            name: "Trần Thị B",
+            info: "Designer 🎨",
+            img: "img/b.jpg"
+        },
+        C: {
+            name: "Lê Văn C",
+            info: "Developer 💻",
+            img: "img/c.jpg"
+        },
+        D: {
+            name: "Phạm Thị D",
+            info: "Content ✍️",
+            img: "img/d.jpg"
+        }
+    };
+
+    document.getElementById("popup").style.display = "block";
+    document.getElementById("popup-img").src = data[m].img;
+    document.getElementById("popup-name").innerText = data[m].name;
+    document.getElementById("popup-info").innerText = data[m].info;
+}
+
+function hide() {
+    document.getElementById("popup").style.display = "none";
 }
